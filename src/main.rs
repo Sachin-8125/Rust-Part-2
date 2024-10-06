@@ -1,17 +1,21 @@
-use chrono::{Local,Utc};
-
 fn main() {
-    //get current date and time in utc
-    let now = Utc::now();
-    println!("Current date and time in UTC: {}",now);
+    let mut vec = Vec::new();
+    vec.push(1);
+    vec.push(2);
+    vec.push(3);
+    vec.push(4);
+    println!("{:?}",even_filter(vec));
+}
 
-    //format date and time
-    let formatted = now.format("%Y-%m-%d %H:%M:%S");
-    println!("Formatted date and time: {}",formatted);
+fn even_filter(vec: Vec<i32>) -> Vec<i32>{
+    let mut new_vec = Vec::new();
+    for val in vec{
+        if val%2==0 {
+            new_vec.push(val);
+        }
+    }
+    return new_vec;
 
-    //get local time
-    let local = Local::now();
-    println!("Current date and time in local: {}",local);
 }
 
 
