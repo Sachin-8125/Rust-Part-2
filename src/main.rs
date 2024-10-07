@@ -1,19 +1,17 @@
+use std::collections::HashMap;
 fn main() {
-    let mut vec = vec![1,2,3,4];
-    let ans = even_filter(&vec);
-    println!("{:?}",ans);
-}
+    let mut users = HashMap::new();
+    users.insert(String::from("sachin"), 22);
+    users.insert(String::from("saurav"), 32);
 
-fn even_filter(vec: &Vec<i32>) -> Vec<i32>{
-    let mut new_vec = Vec::new();
-    for val in vec{
-        if val%2==0 {
-            new_vec.push(*val);
-        }
+    let first_user_age = users.get("saurav");
+    match first_user_age{
+        Some(age) => println!("age is {}",age),
+        None => println!("user not found"),
     }
-    return new_vec;
-
 }
+
+
 
 
 
