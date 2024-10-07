@@ -1,14 +1,10 @@
-use std::collections::HashMap;
 fn main() {
-    let mut users = HashMap::new();
-    users.insert(String::from("sachin"), 22);
-    users.insert(String::from("saurav"), 32);
+   let v1 = vec![1,2,3];
+   let v1_iter = v1.iter();
 
-    let first_user_age = users.get("saurav");
-    match first_user_age{
-        Some(age) => println!("age is {}",age),
-        None => println!("user not found"),
-    }
+   for val in v1_iter{
+    println!("Got: {}", val);
+   }
 }
 
 
